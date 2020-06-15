@@ -39,7 +39,7 @@ class ProfHorista extends Professor {
     private $totalHoras;
     private $salarioHoras;
     
-    public function __construct($nome, $idade, $matricula, $salarioHoras, $totalhoras){
+    public function __construct($nome, $idade, $matricula, $salarioHoras, $totalHoras){
     Professor::setNome($nome);
     Professor::setIdade($idade);
     Professor::setMatricula($matricula);
@@ -49,9 +49,11 @@ class ProfHorista extends Professor {
     }
 
     public function CalcularSalario(){
-      return $this->totalHoras*$this->$salarioHoras*4;
+      return $this->totalHoras*$this->salarioHoras*4;
       }
   }
+
+  
 class ProfFixo extends Professor{
   private $salario;
   public function __construct($nome, $idade, $matricula, $salario){
@@ -61,7 +63,7 @@ class ProfFixo extends Professor{
     $this->salario = $salario;
     echo __CLASS__."<br>";
     }
-  }    
+} 
 $Professor = new Professor('Aparecida', 44, 120118830);
 $ProfHorista = new ProfHorista('Aparecida', 44, 120118830, 10, 300.00);
 $ProfFixo = new ProfFixo('Aparecida', 44, 120118830, 2000.00);
@@ -72,6 +74,12 @@ var_dump($Professor);
 var_dump($ProfHorista);
 
 var_dump($ProfFixo);
+
+// Looping
+
+for($contagem = 5; $contagem <=15; $contagem ++){
+  echo $contagem. "<br>" ;
+}
 
 
 ?>
